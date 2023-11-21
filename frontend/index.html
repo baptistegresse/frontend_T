@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Page App</title>
+    <link rel="stylesheet" href="/static/css/index.css">
+</head>
+<body>
+    <nav class="nav">
+        <a href="/" class="nav__link" data-link>Dashboard</a>
+        <a href="/game" class="nav__link" data-link>Game</a>
+        <a href="/settings" class="nav__link" data-link>Settings</a>
+        <a href="/tournament" class="nav__link" data-link>Tournament</a>
+    </nav>
+    <div id="app"></div>
+    <script src="https://cdn.jsdelivr.net/npm/faker@5.5.3/dist/faker.min.js"></script>
+    <script type="module" src="/static/js/index.js"></script>
+</body>
+</html>
