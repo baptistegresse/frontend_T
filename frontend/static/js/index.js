@@ -1,7 +1,7 @@
-import Dashboard from "./views/Dashboard.js";
-import Game from './views/Game.js'
-import Settings from "./views/Settings.js";
-import Tournament from "./views/Tournament.js";
+import Dashboard from "./views/dashboard_view/Dashboard.js";
+import Game from './views/game_view/Game.js'
+import Settings from "./views/settings_view/Settings.js";
+import Tournament from "./views/tournament_view/Tournament.js";
 
 const pathToRegex = path => new RegExp("^" + path.replace(/\//g, "\\/").replace(/:\w+/g, "(.+)") + "$");
 
@@ -48,17 +48,18 @@ const router = async () => {
     const view = new match.route.view(getParams(match));
 
     document.querySelector("#app").innerHTML = await view.getHtml();
+
+    if (typeof view.onRender === "function") {
+        await view.onRender();
+    }
 };
 
 window.addEventListener("popstate", router);
 
 document.addEventListener("DOMContentLoaded", () => {
-    let username = localStorage.getItem("username");
-
-    if (!username) {
-        username = faker.name.findName();
-        localStorage.setItem("username", username);
-    }
+    
+    if (!localStorage.getItem('username'))
+        localStorage.setItem('username', 'default');
 
     document.body.addEventListener("click", e => {
         if (e.target.matches("[data-link]")) {
@@ -66,8 +67,8 @@ document.addEventListener("DOMContentLoaded", () => {
             navigateTo(e.target.href);
         }
     });
-
+    
     router();
 });
 
-
+export default router;
