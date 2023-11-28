@@ -2,6 +2,7 @@ import Dashboard from "./views/dashboard_view/Dashboard.js";
 import Game from './views/game_view/Game.js'
 import Settings from "./views/settings_view/Settings.js";
 import Tournament from "./views/tournament_view/Tournament.js";
+import History from "./views/history_view/History.js";
 
 const pathToRegex = path => new RegExp("^" + path.replace(/\//g, "\\/").replace(/:\w+/g, "(.+)") + "$");
 
@@ -25,7 +26,8 @@ const router = async () => {
         { path: "/", view: Dashboard },
         { path: "/game", view: Game },
         { path: "/settings", view: Settings },
-        { path: "/tournament", view: Tournament }
+        { path: "/tournament", view: Tournament },
+        { path: "/history", view: History}
     ];
 
     // Test each route for potential match
@@ -60,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     if (!localStorage.getItem('username'))
         localStorage.setItem('username', 'default');
-
+    localStorage.setItem('language', ['fr', 'es', 'en'].includes(localStorage.getItem('language')) ? localStorage.getItem('language') : 'en');
     document.body.addEventListener("click", e => {
         if (e.target.matches("[data-link]")) {
             e.preventDefault();

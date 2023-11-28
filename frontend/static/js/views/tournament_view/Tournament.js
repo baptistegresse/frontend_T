@@ -16,7 +16,7 @@ export default class extends AbstractView {
 
         // Initialize an array for 11 matches with default data
         this.tournamentData = Array.from({ length: 11 }, (_, index) => ({
-            match: `Match ${index + 1}`,
+            match: `${index + 1}`,
             player1: "",
             player2: "",
             winner: "",
@@ -29,30 +29,30 @@ export default class extends AbstractView {
         const translation = this.translations[selectedLanguage];
 
         return `
-            <div class="container mt-5">
-                <div class="row justify-content-center">
-                    <div class="col-md-8 text-center">
-                        <h1>${translation.title}</h1>
-                        <p class="lead">${translation.description}</p>
-                        
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>${translation.match}</th>
-                                    <th>${translation.player1}</th>
-                                    <th>${translation.player2}</th>
-                                    <th>${translation.winner}</th>
-                                    <th>${translation.score}</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                ${this.renderMatches()}
-                            </tbody>
-                        </table>
-                    </div>
+        <div class="container mt-5" style="background-color: #f8f9fa; padding: 20px; border-radius: 10px; margin-bottom: 30px">
+            <div class="row justify-content-center">
+                <div class="col-md-7 text-center" style="background-color: #ffffff; padding: 30px; border-radius: 10px; box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);">
+                    <h1 style="color: #343a40; font-weight: 700;">${translation.title}</h1>
+                    <p class="lead" style="color: #6c757d;">${translation.description}</p>
+    
+                    <table class="table" style="background-color: #ffffff;">
+                        <thead>
+                            <tr>
+                                <th>${translation.match}</th>
+                                <th>${translation.player1}</th>
+                                <th>${translation.player2}</th>
+                                <th>${translation.winner}</th>
+                                <th>${translation.score}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${this.renderMatches()}
+                        </tbody>
+                    </table>
                 </div>
             </div>
-        `;
+        </div>
+    `;
     }
 
     renderMatches() {

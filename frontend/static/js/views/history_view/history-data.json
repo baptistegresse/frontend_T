@@ -1,0 +1,18 @@
+[
+    {
+      "date": "2023-11-27",
+      "enemy": "Opponent A",
+      "result": "Victory"
+    },
+    {
+      "date": "2023-11-26",
+      "enemy": "Opponent B",
+      "result": "Defeat"
+    },
+    {
+      "date": "2023-11-25",
+      "enemy": "Opponent C",
+      "result": "Draw"
+    }
+  ]
+  

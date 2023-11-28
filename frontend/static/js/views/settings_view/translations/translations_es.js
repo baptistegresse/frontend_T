@@ -1,8 +1,12 @@
 export default {
-    title: "Configuraciones",
-    description: "Administre su privacidad y configuración.",
+    title: "Configuración",
+    description: "Administra tu privacidad y configuración.",
     language: "Idioma",
     english: "Inglés",
     spanish: "Español",
-    french: "Francés"
+    french: "Francés",
+    avatar: "Avatar",
+    chooseFile: "Seleccionar archivo",
+    enterUsername: "Ingrese su nombre de usuario",
+    username: "Nombre de usuario"
 }
